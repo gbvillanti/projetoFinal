@@ -1,0 +1,107 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  18/May/2021  15:27:30
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\Exe\projetoFinal.out
+#    Map file     =
+#        C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\List\projetoFinal.map
+#    Command line =
+#        -f
+#        C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\Exe\projetoFinal.out.rsp
+#        (C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\Obj\asm.o
+#        --no_out_extension -o
+#        C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\Exe\projetoFinal.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\List\projetoFinal.map
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --no_library_search --entry __iar_program_start --vfe --text_out
+#        locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address    Size  Object
+  -------   ----         -------    ----  ------
+"A0":                               0x40
+  .intvec   ro code          0x0    0x40  asm.o [1]
+                          - 0x40    0x40
+
+"P1":                              0x438
+  .text     ro code         0x40   0x3b0  asm.o [1]
+  .rodata   const          0x3f0    0x86  asm.o [1]
+  .text     ro code        0x476     0x2  asm.o [1]
+                         - 0x478   0x438
+
+"P2":                             0x8000
+  CSTACK             0x2000'0000  0x8000  <Block>
+    CSTACK  uninit   0x2000'0000  0x8000  <Block tail>
+                   - 0x2000'8000  0x8000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x478     0xf'ffff  0xf'fb88
+  0x2000'8000  0x2003'ffff  0x3'8000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module          ro code  ro data  rw data
+    ------          -------  -------  -------
+command line/config:
+    -----------------------------------------
+    Total:
+
+C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\Obj: [1]
+    asm.o             1'010      134
+    -----------------------------------------
+    Total:            1'010      134
+
+    Linker created                     32'768
+---------------------------------------------
+    Grand Total:      1'010      134   32'768
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address  Size  Type      Object
+-----                    -------  ----  ----      ------
+CSTACK$$Base         0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit        0x2000'8000         --   Gb  - Linker created -
+__iar_program_start         0x41        Code  Gb  asm.o [1]
+__vector_table               0x0        Data  Gb  asm.o [1]
+
+
+[1] = C:\Users\Gabriel\Desktop\Micro\EK-TM4C1294_SM_IAR8-main\Projects\projetoFinal\Debug\Obj
+
+   1'010 bytes of readonly  code memory
+     134 bytes of readonly  data memory
+  32'768 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
